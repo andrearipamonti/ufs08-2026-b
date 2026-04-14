@@ -3,6 +3,11 @@ body {
     font-size: clamp(1rem, 0.875rem + 0.3125vw, 1.25rem);
 }  
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -13,6 +18,49 @@ body {
     margin-right: 1em;
     display: inline-block;
 }
+
+/* Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 2em;
+    display: flex;
+}
+
+.hero.hero--centered {
+    align-items: center; /* Y-axis */
+    justify-content: center; /* X-axis */
+}
+
+.hero.hero--fullscreen {
+    height: 100vh;
+}
+
+.hero.hero--fullscreen .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero.hero--dark {
+    background-color: #000;
+    color: #fff; 
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* END Hero Section */
 
 .list-reset {
     list-style: none;
