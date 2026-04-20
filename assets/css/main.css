@@ -3,6 +3,14 @@ body {
     font-size: clamp(1rem, 0.875rem + 0.3125vw, 1.25rem);
 }  
 
+body.menu-open main {
+    opacity: 0.5;
+}
+
+main {
+    transition: opacity 0.3s ease;
+}
+
 img {
     max-width: 100%;
     height: auto;
