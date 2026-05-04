@@ -105,6 +105,85 @@ img {
 }
 /* END Flexbox Section */
 
+/* Card Section */
+
+.card-container {
+    max-width: 1440px;
+    margin: 8em auto;
+    padding: 0 2em;
+
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 0 0 100%;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.card .hero {
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 1em 2em;
+    min-height: 320px;
+}
+
+.card .hero img {
+    opacity: 1;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card .hero .hero-content h2 {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card .card-content {
+    padding: 2em;
+}
+
+.card .hero::before {
+    content: '';
+    /* obbligatorio dichiarare il contenuto */
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 1) 0%, 
+                    rgba(0, 0, 0, 0) 100%
+                );
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.card img {
+    transition: transform 0.3s 0s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card .hero:hover img {
+    transform: scale(1.2);
+} 
+/* END Card Section */
+
+
 .clearfix::after {
     content: '';
     clear: both;
@@ -115,4 +194,17 @@ img {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+    .card {
+        flex: 0 0 calc((100% - 2em) / 3);
+    }
+}
+
+@media print {
+    body {
+        display: none;
+    }
 }
